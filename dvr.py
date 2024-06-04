@@ -23,13 +23,14 @@ def solveSys(grid,v,m):
 	return val,vec
 
 if __name__ == "__main__":
-	mass=1.
 	def v(x):
 		return 0.5*(x**2)
 	step=0.1
-	start=-10
-	stop=10.1
-	grid=np.arange(start,stop,step)
+	start=-10.
+	stop=10.
+	mass=1.
+	num_graph=5
+	grid=np.arange(start,stop+(step/2.),step)
 	print('')
 	print('grid:')
 	print(grid)
@@ -38,7 +39,7 @@ if __name__ == "__main__":
 	print('Eigenvalues are:')
 	print(val)
 	print('')
-	for i in range(5):
+	for i in range(num_graph):
 		plt.title('Eigenfunction {}'.format(i+1))
 		plt.xlabel('position')
 		plt.ylabel('wavefunction')
