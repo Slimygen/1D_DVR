@@ -39,7 +39,7 @@ if __name__ == "__main__":
 	print('Eigenvalues are:')
 	print(val)
 	print('')
-	for i in range(num_graph):
+	for i in range(min(len(vec),num_graph)):
 		plt.title('Eigenfunction {}'.format(i+1))
 		plt.xlabel('position')
 		plt.ylabel('wavefunction')
