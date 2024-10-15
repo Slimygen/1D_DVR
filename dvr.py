@@ -338,11 +338,14 @@ if __name__ == "__main__":
         #return 0.5*(x**2)
         #return 0.
         #return 100.*np.sin(100.*np.pi*(x-10.)/20.)
-        return 10.*(np.exp(-((x+5.)**2))+np.exp(-((x-5.)**2)))
+        #return 10.*(np.exp(-((x+5.)**2))+np.exp(-((x-5.)**2)))
         #return (10.*np.exp(-((x+5.)**2)))+(1.*np.exp(-((x-5.)**2)))
+        #if x<=0.:
+        #    return 0.5*(x**2)
+        return 0.5*(x**2)*np.exp(-0.26*(x**2))
     step=0.1
-    start=-10.
-    stop=10.
+    start=-1.
+    stop=1.
     m=1.
     q=-1.
     grid=np.arange(start,stop+(step/2.),step)
@@ -355,12 +358,12 @@ if __name__ == "__main__":
     print('Eigenvalues are:')
     print(hosys.vals)
     print('')
-    #hosys.plot_vecs([1,2,3,4,5])
-    hosys.make_stab_data(both_sides=True,verbose=1)
+    hosys.plot_vecs([1,2,3,4,5])
+    hosys.make_stab_data(len_add=10.,both_sides=True,verbose=1)
     hosys.make_stab_plot()
-    hosys.detect_avoided_crossings(each_side=5,plot=False)
+    hosys.detect_avoided_crossings(each_side=10,plot=False)
     hosys.gpa(3,4,5,verbose=3.)
-    hosys.detect_avoided_crossings(each_side=5,plot=True)
+    hosys.detect_avoided_crossings(each_side=10,plot=True)
 
 
 
