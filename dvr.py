@@ -344,8 +344,8 @@ if __name__ == "__main__":
         #    return 0.5*(x**2)
         return 0.5*(x**2)*np.exp(-0.26*(x**2))
     step=0.1
-    start=-1.
-    stop=1.
+    start=-2.
+    stop=2.
     m=1.
     q=-1.
     grid=np.arange(start,stop+(step/2.),step)
